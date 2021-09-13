@@ -1,0 +1,5 @@
+background
+build-up
+farmland
+forest
+water

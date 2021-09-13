@@ -1,0 +1,119 @@
+DATASET:
+#  root_dataset: "dataset/CROP_GID_256/Fine Land-cover Classification_15classes"
+#  list_train: "dataset/CROP_GID_256/Fine Land-cover Classification_15classes/train.txt"
+#  list_val: "dataset/CROP_GID_256/Fine Land-cover Classification_15classes/val.txt"
+
+  root_dataset: "dataset/CROP_GID_256/6classes/"
+#  list_train: "dataset/CROP_GID_256/6classes/train.txt"
+#  list_train: "dataset/CROP_GID_256/6classes/train_05.txt"
+#  list_train: "dataset/CROP_GID_256/6classes/train_01.txt"
+#  list_train: "dataset/CROP_GID_256/6classes/built.txt"
+  list_train: "dataset/CROP_GID_256/6classes/train_sub1.txt"
+#  list_val: "dataset/CROP_GID_256/6classes/train_set/test/built/built_val.txt"
+  list_val: "dataset/CROP_GID_256/6classes/built_val.txt"
+
+
+
+  imgSizes: 256    # 短边尺寸
+  imgMaxSize: 1000
+  padding_constant: 8
+  segm_downsampling_rate: 8
+  random_flip: False
+  img_resize: False
+#  classes: 13
+#  classes: 7
+  classes: 2
+
+#  mean: [0.370, 0.390, 0.362]    # RGB
+#  std: [0.493, 0.482, 0.483]    # RGB
+  # BGR平均值为:
+  # mean = [0.362288113880879, 0.38999640555395365, 0.3703590483836345]
+  # BGR方差为:
+  # var = [0.2334366111417995, 0.2331594671338346, 0.24281419337305124]
+  # BGR标准差为:
+  # std = [0.4831527824009704, 0.482865889387348, 0.4927618018607482]
+
+#  mean: [0.011, 0.014, 0.013]    # RGB
+#  std: [0.272, 0.294, 0.290]    # RGB
+#  BACKGRONUD TO 0: BGR平均值为:
+#  mean=[0.013295572283096298, 0.013537402557776766, 0.011434762741894026]
+#  BGR方差为:
+#  var=[0.08394512107907987, 0.08642647141849003, 0.0741088212189417]
+#  BGR标准差为:
+#  std=[0.2897328443222823, 0.29398379448277423, 0.2722293540728878]
+
+#  mean: [0.192, 0.196, 0.177]    # RGB
+#  std: [0.491, 0.490, 0.481]    # RGB
+#BGR平均值为:
+#mean=[0.17671388079905168, 0.1962525023228242, 0.1915083168332683]
+#BGR方差为:
+#var=[0.2314512466352724, 0.2405557282283211, 0.241249396363298]
+#BGR标准差为:
+#std=[0.48109380232473625, 0.4904648083484901, 0.4911714531233447]
+
+#BGR平均值为:
+#mean=[0.24722407077320735, 0.29553232361662446, 0.28469660452879547]
+#BGR方差为:
+#var=[0.22161617660936947, 0.2290044309352877, 0.22212829568503054]
+#BGR标准差为:
+#std=[0.4707612734809114, 0.4785440741826062, 0.47130488612471494]
+  mean: [0.285, 0.300, 0.247]    # RGB
+  std: [0.471, 0.479, 0.471]    # RGB
+
+
+
+TRAIN:
+  num_workers: 8
+#  workers: 4  # data loader workers    4
+#  index_split: 20
+  arch: psp
+  layers: 50    # [50, 101, 152]
+  train_h: 256   # 473    241
+  train_w: 256    # 473    241
+  zoom_factor: 8  # zoom factor for final prediction during training, be in [1, 2, 4, 8]
+  ignore_label: 256
+  aux_weight: 0.4
+#  train_gpu: [0]    #[0, 1, 2, 3, 4, 5, 6, 7]
+
+  batch_size: 8    # batch size for training 16
+
+  base_lr: 0.01
+  step_size: 50
+
+  start_epoch: 0
+  epochs: 300     # end_epoch
+
+
+  power: 0.9
+  momentum: 0.9
+  weight_decay: 0.0001
+  manual_seed: 1
+  print_freq: 10    # iteration
+  save_freq: 1    # epoch
+  save_path: exp/pspnet50/
+
+
+VAL:
+  if_cuda: Ture
+  evaluate: False # evaluate on validation set, extra gpu memory needed and small batch_size_val is recommend
+  val_freq: 10    # epoch
+  val_batch_size: 8
+  val_model_path: exp/pspnet50/train_epoch_300.pth  # evaluation model path
+
+TEST:
+#  test_list: dataset/list/ade20k/validation.txt    #../dataset/ade20k/list/validation.txt
+#  split: val  # split in [train, val and test]
+#  base_size: 512  # based size for scaling
+#  test_h: 473
+#  test_w: 473
+#  scales: [1.0]  # evaluation scales, ms as [0.5, 0.75, 1.0, 1.25, 1.5, 1.75]
+#  has_prediction: False  # has prediction already or not
+#  index_start: 0  # evaluation start index in list
+#  index_step: 0  # evaluation step index in list, 0 means to end
+  test_gpu: [0]
+  model_path: exp/pspnet50/train_epoch_300.pth  # evaluation model path
+#  save_folder: exp/pspnet50/result/epoch_100/val/ss  # results save folder
+#  colors_path: config/colors_13.txt  # path of dataset colors
+#  names_path: config/names.txt  # path of dataset category names
+#  colors_path: config/colors_6.txt  # path of dataset colors
+  colors_path: config/colors_built.txt  # path of dataset colors

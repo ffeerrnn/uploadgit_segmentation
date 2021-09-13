@@ -1,0 +1,68 @@
+DATASET:
+  root_dataset: "dataset/CROP_GID_256/Fine Land-cover Classification_15classes"
+  list_train: "dataset/CROP_GID_256/Fine Land-cover Classification_15classes/train.txt"
+  list_val: "dataset/CROP_GID_256/Fine Land-cover Classification_15classes/val.txt"
+
+  imgSizes: 256    # 短边尺寸
+  imgMaxSize: 1000
+  padding_constant: 8
+  segm_downsampling_rate: 8
+  random_flip: False
+  img_resize: False
+  classes: 13
+
+  mean: [0.192, 0.196, 0.177]    # RGB
+  std: [0.491, 0.490, 0.481]    # RGB
+
+
+TRAIN:
+  num_workers: 8
+#  workers: 4  # data loader workers    4
+#  index_split: 20
+  arch: psp
+  layers: 18    # [18, 50, 101, 152]
+  train_h: 256   # 473    241
+  train_w: 256    # 473    241
+  zoom_factor: 8  # zoom factor for final prediction during training, be in [1, 2, 4, 8]
+  ignore_label: 256
+  aux_weight: 0.4
+#  train_gpu: [0]    #[0, 1, 2, 3, 4, 5, 6, 7]
+
+  batch_size: 8    # batch size for training 16
+
+  base_lr: 0.01
+#  step_size: 50
+
+  start_epoch: 0
+  epochs: 200
+
+
+  power: 0.9
+  momentum: 0.9
+  weight_decay: 0.0001
+  manual_seed: 1
+  print_freq: 10    # iteration
+  save_freq: 1    # epoch
+  save_path: exp/pspnet18/
+
+
+VAL:
+  evaluate: False # evaluate on validation set, extra gpu memory needed and small batch_size_val is recommend
+  val_freq: 10    # epoch
+  batch_size_val: 64  # batch size for validation during training, memory and speed tradeoff
+
+TEST:
+#  test_list: dataset/list/ade20k/validation.txt    #../dataset/ade20k/list/validation.txt
+#  split: val  # split in [train, val and test]
+#  base_size: 512  # based size for scaling
+#  test_h: 473
+#  test_w: 473
+#  scales: [1.0]  # evaluation scales, ms as [0.5, 0.75, 1.0, 1.25, 1.5, 1.75]
+#  has_prediction: False  # has prediction already or not
+#  index_start: 0  # evaluation start index in list
+#  index_step: 0  # evaluation step index in list, 0 means to end
+  test_gpu: [0]
+  model_path: exp/pspnet18/train_epoch_200.pth  # evaluation model path
+#  save_folder: exp/pspnet18/result/epoch_100/val/ss  # results save folder
+  colors_path: config/colors.txt  # path of dataset colors
+#  names_path: config/names.txt  # path of dataset category names
