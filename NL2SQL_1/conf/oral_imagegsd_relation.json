@@ -1,0 +1,182 @@
+{
+  "亚米": {
+    "minValue": "0.5",
+    "maxValue": "0.81"
+  },
+  "亚M": {
+    "minValue": "0.5",
+    "maxValue": "0.81"
+  },
+  "亚m": {
+    "minValue": "0.5",
+    "maxValue": "0.81"
+  },
+  "1米": {
+    "minValue": "0.81",
+    "maxValue": "1"
+  },
+  "1M": {
+    "minValue": "0.81",
+    "maxValue": "1"
+  },
+  "1m": {
+    "minValue": "0.81",
+    "maxValue": "1"
+  },
+  "2米": {
+    "minValue": "1.5",
+    "maxValue": "2"
+  },
+  "2M": {
+    "minValue": "1.5",
+    "maxValue": "2"
+  },
+  "2m": {
+    "minValue": "1.5",
+    "maxValue": "2"
+  },
+  "5米": {
+    "minValue": "3",
+    "maxValue": "5"
+  },
+  "5M": {
+    "minValue": "3",
+    "maxValue": "5"
+  },
+  "5m": {
+    "minValue": "3",
+    "maxValue": "5"
+  },
+  "10米": {
+    "minValue": "8",
+    "maxValue": "10"
+  },
+  "10M": {
+    "minValue": "8",
+    "maxValue": "10"
+  },
+  "10m": {
+    "minValue": "8",
+    "maxValue": "10"
+  },
+  "16米": {
+    "minValue": "15",
+    "maxValue": "16"
+  },
+  "16M": {
+    "minValue": "15",
+    "maxValue": "16"
+  },
+  "16m": {
+    "minValue": "15",
+    "maxValue": "16"
+  },
+  "25米": {
+    "minValue": "20",
+    "maxValue": "25"
+  },
+  "25M": {
+    "minValue": "20",
+    "maxValue": "25"
+  },
+  "25m": {
+    "minValue": "20",
+    "maxValue": "25"
+  },
+  "30米": {
+    "minValue": "30",
+    "maxValue": "30"
+  },
+  "30M": {
+    "minValue": "30",
+    "maxValue": "30"
+  },
+  "30m": {
+    "minValue": "30",
+    "maxValue": "30"
+  },
+  "50米": {
+    "minValue": "50",
+    "maxValue": "60"
+  },
+  "50M": {
+    "minValue": "50",
+    "maxValue": "60"
+  },
+  "50m": {
+    "minValue": "50",
+    "maxValue": "60"
+  },
+  "100米": {
+    "minValue": "100",
+    "maxValue": "100"
+  },
+  "100M": {
+    "minValue": "100",
+    "maxValue": "100"
+  },
+  "100m": {
+    "minValue": "100",
+    "maxValue": "100"
+  },
+  "300米": {
+    "minValue": "300",
+    "maxValue": "300"
+  },
+  "300M": {
+    "minValue": "300",
+    "maxValue": "300"
+  },
+  "300m": {
+    "minValue": "300",
+    "maxValue": "300"
+  },
+  "375米": {
+    "minValue": "375",
+    "maxValue": "375"
+  },
+  "375M": {
+    "minValue": "375",
+    "maxValue": "375"
+  },
+  "375m": {
+    "minValue": "375",
+    "maxValue": "375"
+  },
+  "400米": {
+    "minValue": "400",
+    "maxValue": "400"
+  },
+  "400M": {
+    "minValue": "400",
+    "maxValue": "400"
+  },
+  "400m": {
+    "minValue": "400",
+    "maxValue": "400"
+  },
+  "750米": {
+    "minValue": "750",
+    "maxValue": "750"
+  },
+  "750M": {
+    "minValue": "750",
+    "maxValue": "750"
+  },
+  "750m": {
+    "minValue": "750",
+    "maxValue": "750"
+  },
+  "高分辨率": {
+    "minValue": "0.5",
+    "maxValue": "8"
+  },
+  "中分辨率": {
+    "minValue": "8",
+    "maxValue": "100"
+  },
+  "低分辨率": {
+    "minValue": "100",
+    "maxValue": "100"
+  }
+}

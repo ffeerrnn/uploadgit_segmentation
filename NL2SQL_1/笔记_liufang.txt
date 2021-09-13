@@ -1,0 +1,33 @@
+数据库准备：
+	安装sql
+	检查sql是否安装成功 $sudo netstat -tap | grep mysql
+	登陆sql  $mysql -u root -p
+	显示所有数据库 mysql> show databases;
+	创建名为aogeo的数据库mysql> create database aogeo;
+	使用aogeo数据库 mysql> use aogeo;
+	把aogeo.sql导入到aogeo数据库    mysql> source /home/liufang/project/NL2SQL_1/aogeo.sql
+	显示所有表    show tables;
+	
+更改 /home/liufang/project/NL2SQL_1/NL2SQL/settings.py 数据库配置：Mysql
+运行：
+	激活环境 workon nlp2sql
+	python manage.py runserver 0.0.0.0:10066
+
+测试：
+	安装Postman
+	解压进入postman文件夹，有个app文件夹和Postmanwen文件，双击Postman文件运行
+	POST: 输入http://127.0.0.1:10066/nl2sql/aogeo
+	Headers:增加：Content-Type	application/json
+	Body:	{"question":"北京2020年7月"}
+	send
+
+编辑数据库：
+	安装datagrid
+	open--> XX.xlsx文件 --> + --> datasource --> mysql --> Data Sources and Drivers --> user:root password:lf108866 --> ok
+	@locallhost[1 of 6] --> 勾选aogeo --> 就可以看到所有表文件，并可编辑 --> 编辑完成点击向上的绿箭头，完成保存上传。
+	测试
+	
+	
+	
+
+

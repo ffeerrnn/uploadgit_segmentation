@@ -1,0 +1,8 @@
+ keras_bert==0.83.0
+tensorflow_gpu==1.13.1
+Keras==2.2.4
+~umpy==1.18.5
+pandas==1.0.5
+cn2an==0.5.5
+numpy==1.19.1
+tensorflow==2.3.0
