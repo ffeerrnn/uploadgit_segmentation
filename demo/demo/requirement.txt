@@ -1,0 +1,13 @@
+numpy==1.20.3
+opencv-python==4.5.2.54
+Pillow==8.2.0
+protobuf==3.17.3
+PyYAML==5.4.1
+scipy==1.7.0
+six==1.16.0
+tensorboardX==2.2
+torch @ file:///media/liufang/906D-D5BD/%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85%E5%8C%85/torch-1.8.1%2Bcu111-cp39-cp39-linux_x86_64.whl
+torchvision @ file:///media/liufang/906D-D5BD/%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85%E5%8C%85/torchvision-0.9.1%2Bcu111-cp39-cp39-linux_x86_64.whl
+tqdm==4.61.1
+typing-extensions==3.10.0.0
+yacs==0.1.8
